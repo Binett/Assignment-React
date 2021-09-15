@@ -1,7 +1,9 @@
 const homeView = "/"
 const favouriteView = "/favourites"
 
-export default{
+const RoutingPath ={
     homeView,
     favouriteView
 }
+
+export default RoutingPath
