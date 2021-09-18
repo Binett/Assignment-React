@@ -1,9 +1,11 @@
 import React from 'react'
+import { Login } from '../../components/signin/Login'
+
 
 export const SignInView = () => {
     return (
-        <div>
-            <h1>SignInView</h1>
-        </div>
+        <Login>
+            
+        </Login>
     )
 }
