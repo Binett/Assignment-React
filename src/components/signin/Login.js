@@ -5,7 +5,7 @@ import { UserContext } from "../../shared/provider/UserContext";
 export const Login = () => {
   const history = useHistory();
   const [username, setUsername] = useState();
-  const {setAuthenticatedUser} = useContext(UserContext);
+  const { setAuthenticatedUser} = useContext(UserContext);
 
   const login = () => {
     setAuthenticatedUser(username);
