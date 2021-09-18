@@ -1,9 +1,10 @@
 import React, {createContext, useState } from 'react'
 
 const UserContext = createContext()
-const [authenticatedUser, setAuthenticatedUser] = useState()
+
 
 export const UserProvider = ({children}) => {
+const [authenticatedUser, setAuthenticatedUser] = useState()
 
     return (
         <UserContext.Provider value={[authenticatedUser, setAuthenticatedUser]}>
