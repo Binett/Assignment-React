@@ -1,9 +1,11 @@
 const homeView = "/"
 const favouriteView = "/favourites"
+const signInView = "/signin"
 
 const RoutingPath ={
     homeView,
-    favouriteView
+    favouriteView,
+    signInView
 }
 
 export default RoutingPath
