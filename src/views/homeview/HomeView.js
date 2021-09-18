@@ -1,28 +1,20 @@
-import TvMazeAIPService from "../../shared/api/tvmazeapiservice/TvMazeAIPService";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../../shared/provider/AppProvider";
 
 export const HomeView = () => {
     const [search, setSearch] = useState('');
-    const [data, setData] = useState([]);
-
-  const fetchData = async () => {
-    const {data} = await TvMazeAIPService.searhShow(search);
-    setData(data);
-  };
+    const {data, isLoading } = useContext(AppContext);
 
   const displayData = () => {
-    return data?.map((shows)=>(
-        <div key={shows.show.id}>
-            <h3>{shows.show.name}</h3>
-            <img src={shows.show.image?.medium}/>
-            <h4>{shows.show.premiered ? shows.show.premiered.substring(0,4) : '-'}</h4>
+   return(isLoading) ? <p>Loading...</p> :
+     data?.map((shows)=>(
+        <div key={shows.id}>
+            <h3>{shows.name}</h3>
+            <img src={shows.image?.medium} alt="Movie Poster"/>
+            <h4>{shows.premiered ? shows.premiered.substring(0,4) : '-'}</h4>
         </div>
     ))
   };
-
-  useEffect(() => {
-    fetchData();
-  }, [search]);
 
   return (
     <div>
@@ -32,7 +24,7 @@ export const HomeView = () => {
         type="text" 
         onChange={(event)=>setSearch(event.target.value)}       
       />
-      {displayData()}
+      {!isLoading && displayData()}
     </div>
   );
 };
