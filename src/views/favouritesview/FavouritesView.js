@@ -1,7 +1,11 @@
+import { useLocation } from "react-router-dom"
+
 export const FavouritesView = () => {
+    const location = useLocation()
+
     return (
-        <div>
-            <h1>Favourites view</h1>
+        <div>            
+            {(location.state) ? <h1>{location.state}</h1> : <h1>Shows Page</h1> } 
         </div>
     )
 }

@@ -15,6 +15,7 @@ export const ApiProvider = ({ children }) => {
       setData(data);
       setIsLoading(false);
     } catch (error) {
+      setIsLoading(false)
       setError(true);
     }
   };
