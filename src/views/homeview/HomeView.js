@@ -1,13 +1,11 @@
-import { useState, useContext } from "react";
-import { AppContext } from "../../shared/provider/AppProvider";
+import { useContext } from "react";
+import { ApiContext } from "../../shared/provider/ApiProvider";
 
 export const HomeView = () => {
-    const [search, setSearch] = useState('');
-    const {data, isLoading } = useContext(AppContext);
+    const {data, isLoading, error } = useContext(ApiContext);
 
   const displayData = () => {
-   return(isLoading) ? <p>Loading...</p> :
-     data?.map((shows)=>(
+   return data?.map((shows)=>(
         <div key={shows.id}>
             <h3>{shows.name}</h3>
             <img src={shows.image?.medium} alt="Movie Poster"/>
@@ -19,12 +17,8 @@ export const HomeView = () => {
   return (
     <div>
       <h1>Home view</h1>
-      <input
-        placeholder="Search"
-        type="text" 
-        onChange={(event)=>setSearch(event.target.value)}       
-      />
-      {!isLoading && displayData()}
+      {isLoading && <p>Loading...</p> && error && <p>Something went wrong, please try again!</p>}
+      {displayData()}
     </div>
   );
 };

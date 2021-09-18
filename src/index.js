@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {AppProvider} from './shared/provider/AppProvider'
+import {ApiProvider} from './shared/provider/ApiProvider'
 
 ReactDOM.render(
   <React.StrictMode>
-      <AppProvider>
+      <ApiProvider>
         <App />
-      </AppProvider>
+      </ApiProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
