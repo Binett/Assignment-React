@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ApiContext } from "../../shared/provider/ApiProvider";
+import { ApiContext } from "../../shared/provider/ApiContext";
 
 export const HomeView = () => {
     const {data, isLoading, error } = useContext(ApiContext);
