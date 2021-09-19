@@ -19,11 +19,14 @@ export const NavigationDesktop = () => {
       <div className="navbar">
         <ul className="navbar__ul">
           <li onClick={() => history.push(RoutingPath.homeView)}>Home</li>
-          <li onClick={() => history.push(RoutingPath.favouriteView)}>
-            Favourites
-          </li>
+
           {authenticatedUser ? (
-            <li onClick={() => logout()}>Logout</li>
+            <div>
+              <li onClick={() => history.push(RoutingPath.favouriteView)}>
+                Favourites
+              </li>
+              <li onClick={() => logout()}>Logout</li>
+            </div>
           ) : (
             <li onClick={() => history.push(RoutingPath.signInView)}>Login</li>
           )}
