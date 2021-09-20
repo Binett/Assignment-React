@@ -11,8 +11,9 @@ export const ApiProvider = ({ children }) => {
   const fetchFirstData = async () => {
     try {
       setIsLoading(true);
-      const { data } = await axios.get(`https://api.tvmaze.com/shows`);
-      setData(data);
+      const { data } = await axios.get(`https://api.tvmaze.com/shows?page=1`);
+      console.log(data);
+      setData(data)
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false)
