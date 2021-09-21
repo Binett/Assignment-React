@@ -9,7 +9,7 @@ export const ResultCard = () => {
   const history = useHistory();
   const { data } = useContext(ApiContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(8);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;

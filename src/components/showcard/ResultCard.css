@@ -8,13 +8,16 @@
   margin: 20px auto;
   padding: 15px 10px;
   background: #fff;
+  border-radius: 1%;
 }
 
 .result-card{
+  background-color: var(--clr-primary-dark);
   display: grid;
   grid-template-columns: repeat(1,1fr);
   max-width: 1080px;
   margin: 0 auto;
+  border-radius: 1%;
 }
 
 @media only screen and (min-width: 768px) {
