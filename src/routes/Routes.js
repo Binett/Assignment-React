@@ -16,6 +16,8 @@ export const Routes = (props) => {
   }
 
   const blockIfAuthenticated = (view) => (authenticatedUser ? HomeView : view);
+  
+  const blockIfNotAuthenticated = (view) => (!authenticatedUser ? SignInView : view);
 
 
   useEffect(()=>{
@@ -26,7 +28,7 @@ export const Routes = (props) => {
     <BrowserRouter>
       {props.children}
       <Switch>
-        <Route path={RoutingPath.favouriteView} component={FavouritesView} />
+        <Route path={RoutingPath.favouriteView} component={blockIfNotAuthenticated(FavouritesView)} />
         <Route path={RoutingPath.infoView} component={InfoView} />
         <Route path={RoutingPath.signInView} component={blockIfAuthenticated(SignInView)} />
         <Route path={RoutingPath.homeView} component={HomeView} />

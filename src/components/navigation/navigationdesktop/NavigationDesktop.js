@@ -15,22 +15,23 @@ export const NavigationDesktop = () => {
   };
 
   return (
-    <div className="container">
-      <div className="navbar">
-        <ul className="navbar__ul">
-          <li onClick={() => history.push(RoutingPath.homeView)}>Home</li>
-
-          {authenticatedUser ? (
-            <div>
-              <li onClick={() => history.push(RoutingPath.favouriteView)}>
-                Favourites
-              </li>
-              <li onClick={() => logout()}>Logout</li>
-            </div>
-          ) : (
-            <li onClick={() => history.push(RoutingPath.signInView)}>Login</li>
-          )}
-        </ul>
+    <div className="navbar">
+      <div className="container">
+        <nav className="nav">
+          <ul className="navbar__ul">
+            <li onClick={() => history.push(RoutingPath.homeView)}>Home</li>
+            {authenticatedUser ? (
+              <div className="nav-loggedin">
+                <li onClick={() => history.push(RoutingPath.favouriteView)}>
+                  Favourites
+                </li>
+                <li onClick={() => logout()}>Logout</li>
+              </div>
+            ) : (
+              <li onClick={() => history.push(RoutingPath.signInView)}>Login</li>
+            )}
+          </ul>
+        </nav>
       </div>
     </div>
   );

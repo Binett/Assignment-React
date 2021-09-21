@@ -1,16 +1,29 @@
 .navbar{
-    display: flex;
     background-color: var(--clr-primary-dark);
-    color: var(--clr-primary);
+    width: 100%;    
+    border: 1px solid #000;
+}
+
+.nav-loggedin{
+    display: flex;
 }
 
 .navbar__ul{
-    list-style: none;   
+    list-style: none;
     display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 1em 1em;
 }
 
 .navbar__ul li{
-    padding-left: 2em;
     font-weight: bold;
     cursor: pointer;
+    padding-left: 10px;
+    color:var(--clr-secondary-ligth);
+    font-size: 1.35em;
+}
+
+.navbar__ul li:hover{
+    color: var(--clr-primary);
 }
