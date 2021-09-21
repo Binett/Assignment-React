@@ -21,7 +21,7 @@ export const ResultCard = () => {
 
   return (
     <div>
-      <div className="result card">
+      <div className="result-card">
         {currentPost.length > 0}
         {currentPost.map((shows) => (
           <div key={shows.name} className="post">

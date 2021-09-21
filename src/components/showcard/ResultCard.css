@@ -9,3 +9,24 @@
   padding: 15px 10px;
   background: #fff;
 }
+
+.result-card{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .result-card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media only screen and (min-width: 1068px) {
+  .result-card{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+}
