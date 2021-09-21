@@ -5,6 +5,7 @@ import { HomeView } from "../views/homeview/HomeView";
 import { SignInView } from "../views/signinview/SignInView";
 import { UserContext } from "../shared/provider/UserContext";
 import RoutingPath from "./RoutingPath";
+import { InfoView } from "../views/infoView/InfoView";
 
 export const Routes = (props) => {
   const { authenticatedUser, setAuthenticatedUser } = useContext(UserContext);
@@ -26,6 +27,7 @@ export const Routes = (props) => {
       {props.children}
       <Switch>
         <Route path={RoutingPath.favouriteView} component={FavouritesView} />
+        <Route path={RoutingPath.infoView} component={InfoView} />
         <Route path={RoutingPath.signInView} component={blockIfAuthenticated(SignInView)} />
         <Route path={RoutingPath.homeView} component={HomeView} />
       </Switch>

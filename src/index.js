@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ApiProvider } from "./shared/provider/ApiContext";
 
 ReactDOM.render(
   <React.StrictMode>
+    <ApiProvider>
     <App />
+    </ApiProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
