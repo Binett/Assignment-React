@@ -7,15 +7,6 @@ export const InfoView = () => {
     const history = useHistory()
     console.log(location.state);
 
-    const fetchData = async () =>{
-        await axios.get(location.state.url)
-        .then((response) => console.log(response))
-    }
-
-
-    // useEffect(()=>{
-    //     fetchData()
-    // },[])
 
     return (
         <div>
