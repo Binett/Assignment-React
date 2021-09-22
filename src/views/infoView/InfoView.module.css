@@ -1,13 +1,14 @@
 .card {
   width: 100%;
-  max-width: 92rem;
+  max-width: 67.5em;
   padding: 5em;
-  background-color: var(--clr-secondary-ligth);
-  box-shadow: 0 2.4rem 8rem rgba(0, 0, 0, 0.2);
+  background-color: var(--clr-primary-light);
+  box-shadow: 0 1.4em 2em rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0.8rem;
+  margin: auto;
 }
 
 .img__poster {
@@ -24,6 +25,7 @@
   object-fit: cover;
   display: block;
   border-radius: 0.8rem;
+  box-shadow: 0 1.4rem 1rem rgba(0, 0, 0, 0.6);
 }
 
 .img__poster img::before {
@@ -33,29 +35,30 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(
-    to right,
-    rgba(79, 172, 254, 0.8),
-    rgba(0, 242, 254, 0.8)
-  );
   box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.05);
   border-radius: 0.8rem;
 }
 
-@media screen and (max-width: 868px) {
-  .card {
-    max-width: 70rem;
-  }
+.infosection {
+  color: var(--clr-secondary-ligth);
+  font-size: 0.5em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 868px) {
   .card {
     padding: 2.5rem;
     flex-direction: column;
   }
-  .img__poster img {
-    width: 100%;
-    height: 100%;
-    transform: translate(0, 0.8rem);
+  .img__poster {
+    min-width: 20rem;
+    max-width: 20rem;
+    height: 30rem;
+    transform: translateX(-8rem);
+    position: relative;
+  }
+  .img__poster {
+    width: auto;
+    height: auto;
+    transform: none;
   }
 }
