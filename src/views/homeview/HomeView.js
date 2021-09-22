@@ -11,8 +11,7 @@ export const HomeView = () => {
           <div key={shows.id}>
               <h3>{shows.name}</h3>
               <img src={shows.image?.medium} alt="Movie Poster"/>
-              <h4>{shows.premiered ? shows.premiered.substring(0,4) : '-'}</h4>
-              {shows.summary}
+              <h4>{shows.premiered ? shows.premiered.substring(0,4) : '-'}</h4>           
           </div>
       ))
   };

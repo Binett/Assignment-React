@@ -8,7 +8,7 @@ export const ApiProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const fetchFirstData = async () => {
+  const fetchData = async () => {
     try {
       setIsLoading(true);
       const { data } = await axios.get(`https://api.tvmaze.com/shows?page=1`);
@@ -22,7 +22,7 @@ export const ApiProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    fetchFirstData();
+    fetchData();
   }, []);
 
   return (
