@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useHistory } from "react-router";
-import {UserContext} from '../../shared/provider/UserContext'
-import RoutingPath from '../../routes/RoutingPath'
+import { UserContext } from "../../shared/provider/UserContext";
+import RoutingPath from "../../routes/RoutingPath";
+import classes from "./SignInView.module.css";
 
 export const SignInView = () => {
   const history = useHistory();
@@ -15,15 +16,17 @@ export const SignInView = () => {
   };
 
   return (
-    <div>
-      <h1>Sign in!</h1>
+    <div className={classes.container}>
+      <h1 className={classes.heading}>Sign in!</h1>
+      <label className={classes.label} htmlFor="text">Username: </label>
       <input
+        className={classes.input}
         placeholder="Username"
         type="text"
         onChange={(e) => setUsername(e.target.value)}
       />{" "}
       <br />
-      <button onClick={() => login()}>Log in</button>
+      <button className={classes.button} onClick={() => login()}>Log in</button>
     </div>
   );
 };
