@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Pagination.css";
 
 export const Pagination = ({ postPerPage, totalPost, paginate }) => {
@@ -7,6 +7,10 @@ export const Pagination = ({ postPerPage, totalPost, paginate }) => {
   for (let i = 1; i <= Math.ceil(totalPost / postPerPage); i++) {
     pageNumbers.push(i);
   }
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
   return (
     <nav >

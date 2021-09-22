@@ -1,11 +1,11 @@
 const homeView = "/"
-const favouriteView = "/favourites"
+const showsView = "/shows"
 const signInView = "/signin"
 const infoView = "/info"
 
 const RoutingPath ={
     homeView,
-    favouriteView,
+    showsView,
     signInView,
     infoView
 }
