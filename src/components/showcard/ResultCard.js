@@ -3,11 +3,12 @@ import { ApiContext } from "../../shared/provider/ApiContext";
 import { Pagination } from "../pagination/Pagination";
 import { useHistory } from "react-router";
 import RoutingPath from "../../routes/RoutingPath";
-import "./ResultCard.css";
+import loader from '../../shared/images/loader.gif'
+import classes from "./ResultCard.module.css";
 
 export const ResultCard = () => {
   const history = useHistory();
-  const { data } = useContext(ApiContext);
+  const { data,isLoading,error } = useContext(ApiContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(8);
 
@@ -21,10 +22,11 @@ export const ResultCard = () => {
 
   return (
     <div>
-      <div className="result-card">
+       {isLoading ? <img src={loader} alt="Loading bar"/> : error && <p>Something went wrong, please try again!</p>}
+      <div className={classes.result__card}>
         {currentPost.length > 0}
         {currentPost.map((shows) => (
-          <div key={shows.name} className="post">
+          <div key={shows.name} className={classes.post}>
             <h3>{shows.name}</h3>
             <img src={shows.image?.medium} alt="Movie Poster" />
             <h4>{shows.premiered ? shows.premiered.substring(0, 4) : "-"}</h4>

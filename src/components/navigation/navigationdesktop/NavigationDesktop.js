@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useHistory } from "react-router";
 import RoutingPath from "../../../routes/RoutingPath";
 import { UserContext } from "../../../shared/provider/UserContext";
-import "./NavigationDesktop.css";
+import classes from "./NavigationDesktop.module.css";
 
 export const NavigationDesktop = () => {
   const { authenticatedUser, setAuthenticatedUser } = useContext(UserContext);
@@ -15,15 +15,15 @@ export const NavigationDesktop = () => {
   };
 
   return (
-    <div className="navbar">
-      <div className="container">
-        <nav className="nav">
-          <ul className="navbar__ul">
+    <div className={classes.navbar}>
+      <div className={classes.container}>
+        <nav className={classes.nav}>
+          <ul className={classes.navbar__ul}>
             <li onClick={() => history.push(RoutingPath.homeView)}>Home</li>
             {authenticatedUser ? (
-              <div className="nav-loggedin">
-                <li onClick={() => history.push(RoutingPath.favouriteView)}>
-                  Favourites
+              <div className={classes.nav__loggedin}>
+                <li onClick={() => history.push(RoutingPath.showsView)}>
+                  Shows
                 </li>
                 <li onClick={() => logout()}>Logout</li>
               </div>

@@ -1,0 +1,68 @@
+.card {
+  width: 100%;
+  max-width: 67.5em;
+  padding: 5em;
+  background-color: var(--clr-primary-dark);
+  box-shadow: 0 1.4em 2em rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.8rem;
+  margin: auto;
+}
+
+.img__poster {
+  min-width: 30rem;
+  max-width: 30rem;
+  height: 40rem;
+  transform: translateX(-8rem);
+  position: relative;
+}
+
+.img__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.8rem;
+  box-shadow: 0 1.4rem 1rem rgba(0, 0, 0, 0.6);
+}
+
+
+.infosection {
+  color: var(--clr-secondary-ligth);
+  font-size: 0.7em;
+  text-align: left;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.6);
+
+}
+
+.infosection button{
+  background: var(--clr-primary);
+  color: var(--clr-secondary-ligth);
+  padding: 0.6em 1.4em;
+  border-radius: 5px;
+  font-weight: bolder;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6);
+  font-size: 1.6em;
+}
+
+
+@media screen and (max-width: 868px) {
+  .card {
+    padding: 2.5rem;
+    flex-direction: column;
+  }
+  .img__poster {
+    min-width: 20rem;
+    max-width: 20rem;
+    height: 30rem;
+    transform: translateX(-8rem);
+    position: relative;
+  }
+  .img__poster {
+    width: auto;
+    height: auto;
+    transform: none;
+  }
+}
