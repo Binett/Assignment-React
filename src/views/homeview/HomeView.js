@@ -1,26 +1,18 @@
-import { useContext } from "react";
-import { ApiContext } from "../../shared/provider/ApiContext";
-import loader from '../../shared/images/loader.gif'
+import classes from './HomeView.module.css'
 
 
 export const HomeView = () => {
-    const {data, isLoading, error } = useContext(ApiContext);
-
-  const displayData = () => {
-     return data?.map((shows)=>(
-          <div key={shows.id}>
-              <h3>{shows.name}</h3>
-              <img src={shows.image?.medium} alt="Movie Poster"/>
-              <h4>{shows.premiered ? shows.premiered.substring(0,4) : '-'}</h4>           
-          </div>
-      ))
-  };
-
   return (
-    <div>
-      <h1>Home view</h1>
-      {isLoading ? <img src={loader} alt="Loading bar"/> : error && <p>Something went wrong, please try again!</p>}
-      {displayData()}
+    <div className={classes.container}>
+        <div className={classes.box1}>
+          <h2>Home view</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, distinctio vitae? Dolore, aspernatur quia? Nostrum earum quaerat itaque quasi, accusamus corporis et quibusdam veritatis. Similique optio quos doloremque aliquid excepturi libero saepe ex numquam laudantium repellendus ipsam assumenda ipsum, facilis commodi obcaecati! Dolor, alias odit. Reiciendis assumenda adipisci deserunt distinctio, iusto nihil odio unde aperiam labore. Ab harum exercitationem sed odit tenetur, minus maiores consequatur!</p>
+        </div>
+    
+      <div className={classes.box2}>
+        <h2>Box2</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum odio dolor adipisci soluta deserunt nemo exercitationem autem a nihil. Laborum, omnis vero libero suscipit sequi maiores nulla voluptatum ex quos.</p>
+      </div>
     </div>
   );
 };

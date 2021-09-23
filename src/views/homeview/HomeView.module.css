@@ -1,0 +1,29 @@
+.container {
+  max-width: 67.5em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+}
+
+.box1 {
+  flex-basis: 48%;
+  height: 30em;
+  background: var(--clr-primary-dark);
+  border-radius: 1em;
+}
+
+.box2 {
+  flex-basis: 48%;
+  height: 30em;
+  background: var(--clr-primary-dark);
+  border-radius: 1em;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        display: block;
+    }
+}
+
+
