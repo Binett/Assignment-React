@@ -4,7 +4,7 @@ import { Pagination } from "../pagination/Pagination";
 import { useHistory } from "react-router";
 import RoutingPath from "../../routes/RoutingPath";
 import loader from '../../shared/images/loader.gif'
-import "./ResultCard.css";
+import classes from "./ResultCard.module.css";
 
 export const ResultCard = () => {
   const history = useHistory();
@@ -23,10 +23,10 @@ export const ResultCard = () => {
   return (
     <div>
        {isLoading ? <img src={loader} alt="Loading bar"/> : error && <p>Something went wrong, please try again!</p>}
-      <div className="result-card">
+      <div className={classes.result__card}>
         {currentPost.length > 0}
         {currentPost.map((shows) => (
-          <div key={shows.name} className="post">
+          <div key={shows.name} className={classes.post}>
             <h3>{shows.name}</h3>
             <img src={shows.image?.medium} alt="Movie Poster" />
             <h4>{shows.premiered ? shows.premiered.substring(0, 4) : "-"}</h4>
