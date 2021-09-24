@@ -22,7 +22,8 @@
   cursor: pointer;
   padding-left: 10px;
   color: var(--clr-secondary-ligth);
-  font-size: 1.35em;
+  font-size: 1.6em;
+  text-shadow: 0.1em 0.2em rgba(0, 0, 0, 0.7);
 }
 
 .navbar__ul li:hover {

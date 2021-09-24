@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import classes from "./Pagination.module.css";
 
 export const Pagination = ({ postPerPage, totalPost, paginate }) => {
@@ -8,9 +8,13 @@ export const Pagination = ({ postPerPage, totalPost, paginate }) => {
     pageNumbers.push(i);
   }
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [paginate]);
+  useEffect(()=>{
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: 'smooth'
+    })
+  },[paginate])
 
   return (
     <ul className={classes.pagination}>

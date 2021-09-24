@@ -11,7 +11,7 @@ export const NavigationDesktop = () => {
   const logout = () => {
     setAuthenticatedUser(false);
     localStorage.removeItem("username");
-    history.goBack();
+    history.push(RoutingPath.homeView);
   };
 
   return (

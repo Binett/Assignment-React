@@ -7,8 +7,8 @@ export const ShowsView = () => {
     
     return (
         <div>            
-            {(location.state) ? <h1>{location.state}</h1> : <h1>Shows Page</h1>}
-            <ResultCard/>
+            {(location.state) ? <h1>{location.state.user}</h1> : <h1>Shows Page</h1>}
+            <ResultCard startPage={location.state}/>
         </div>
     )
 }

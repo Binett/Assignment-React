@@ -2,6 +2,7 @@ import classes from './HomeView.module.css'
 
 
 export const HomeView = () => {
+
   return (
     <div className={classes.container}>
         <div className={classes.box1}>

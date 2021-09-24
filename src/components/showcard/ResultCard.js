@@ -1,16 +1,19 @@
 import { useContext, useState } from "react";
 import { ApiContext } from "../../shared/provider/ApiContext";
 import { Pagination } from "../pagination/Pagination";
-import { useHistory } from "react-router";
+import { useHistory,useLocation } from "react-router";
 import RoutingPath from "../../routes/RoutingPath";
 import loader from '../../shared/images/loader.gif'
 import classes from "./ResultCard.module.css";
 
-export const ResultCard = () => {
+export const ResultCard = (props) => {
   const history = useHistory();
-  const { data,isLoading,error } = useContext(ApiContext);
-  const [currentPage, setCurrentPage] = useState(1);
+  const location = useLocation()
+  const { data,isLoading,error,pageNumber, setpageNumber } = useContext(ApiContext);
+  const [currentPage, setCurrentPage] = useState((props.startPage>1) ? props.startPage : 1);
   const [postsPerPage] = useState(8);
+
+  console.log(location.state);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -30,12 +33,13 @@ export const ResultCard = () => {
             <h3>{shows.name}</h3>
             <img src={shows.image?.medium} alt="Movie Poster" />
             <h4>{shows.premiered ? shows.premiered.substring(0, 4) : "-"}</h4>
-            <button onClick={() => history.push(RoutingPath.infoView, shows)}>
+            <button onClick={() => history.push(RoutingPath.infoView, {shows: shows, currentPage: currentPage})}>
               Show More info
             </button>
           </div>
         ))}
       </div>
+      <button onClick={()=>setpageNumber(pageNumber +1)} >Next</button>
       <div>
         <Pagination
           postPerPage={postsPerPage}
