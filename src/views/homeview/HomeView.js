@@ -1,11 +1,21 @@
+import { useContext } from 'react';
+import { ApiContext } from '../../shared/provider/ApiContext';
 import classes from './HomeView.module.css'
 
 
 export const HomeView = () => {
+ const {data} = useContext(ApiContext)
+
 
   return (
     <div className={classes.container}>
         <div className={classes.box1}>
+          {data?.map((shows)=>(
+            <div>
+              <h2 key={shows.id}></h2>
+              <h2>{shows.name}</h2>
+            </div>
+          ))}
           <h2>Home view</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, distinctio vitae? Dolore, aspernatur quia? Nostrum earum quaerat itaque quasi, accusamus corporis et quibusdam veritatis. Similique optio quos doloremque aliquid excepturi libero saepe ex numquam laudantium repellendus ipsam assumenda ipsum, facilis commodi obcaecati! Dolor, alias odit. Reiciendis assumenda adipisci deserunt distinctio, iusto nihil odio unde aperiam labore. Ab harum exercitationem sed odit tenetur, minus maiores consequatur!</p>
         </div>

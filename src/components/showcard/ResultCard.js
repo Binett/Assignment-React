@@ -6,14 +6,12 @@ import RoutingPath from "../../routes/RoutingPath";
 import loader from '../../shared/images/loader.gif'
 import classes from "./ResultCard.module.css";
 
-export const ResultCard = (props) => {
+export const ResultCard = () => {
   const history = useHistory();
   const location = useLocation()
   const { data,isLoading,error,pageNumber, setpageNumber } = useContext(ApiContext);
-  const [currentPage, setCurrentPage] = useState((props.startPage>1) ? props.startPage : 1);
+  const [currentPage, setCurrentPage] = useState(location.state >1 ? location.state : 1);
   const [postsPerPage] = useState(8);
-
-  console.log(location.state);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -22,6 +20,9 @@ export const ResultCard = (props) => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+ 
+  
 
   return (
     <div>
@@ -39,7 +40,7 @@ export const ResultCard = (props) => {
           </div>
         ))}
       </div>
-      <button onClick={()=>setpageNumber(pageNumber +1)} >Next</button>
+      <button onClick={()=>setpageNumber(pageNumber+1)} >Next</button>
       <div>
         <Pagination
           postPerPage={postsPerPage}

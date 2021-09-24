@@ -9,6 +9,7 @@ export const ApiProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [pageNumber, setpageNumber] = useState(0)
  
+  if(pageNumber>5) setpageNumber(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +28,7 @@ export const ApiProvider = ({ children }) => {
   }, [pageNumber,setpageNumber]);
 
   return (
-    <ApiContext.Provider value={{ data, isLoading, error,pageNumber,setpageNumber}}>
+    <ApiContext.Provider value={{ data, isLoading, error, pageNumber, setpageNumber}}>
       {children}
     </ApiContext.Provider>
   );
