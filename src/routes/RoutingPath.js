@@ -3,7 +3,7 @@ const showsView = "/shows"
 const signInView = "/signin"
 const infoView = "/info"
 
-const RoutingPath ={
+const RoutingPath = {
     homeView,
     showsView,
     signInView,
