@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import axios from "axios";
+import TvMazeAPIService from '../api/tvmazeapiservice/TvMazeAPIService'
 
 export const ApiContext = createContext();
 
@@ -7,15 +7,12 @@ export const ApiProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [pageNumber, setpageNumber] = useState(0)
  
-  if(pageNumber>5) setpageNumber(0);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const { data } = await axios.get(`https://api.tvmaze.com/shows?page=${pageNumber}`);
+        const { data } = await TvMazeAPIService.getFirstData();
         console.log(data);
         setData(data)
         setIsLoading(false);
@@ -25,10 +22,10 @@ export const ApiProvider = ({ children }) => {
       }
     };
     fetchData();
-  }, [pageNumber,setpageNumber]);
+  }, []);
 
   return (
-    <ApiContext.Provider value={{ data, isLoading, error, pageNumber, setpageNumber}}>
+    <ApiContext.Provider value={{ data, isLoading, error}}>
       {children}
     </ApiContext.Provider>
   );

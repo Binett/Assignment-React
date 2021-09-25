@@ -17,12 +17,10 @@ export const ResultCard = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPost = data.slice(indexOfFirstPost, indexOfLastPost);
 
+
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
- 
-  
 
   return (
     <div>
@@ -40,7 +38,7 @@ export const ResultCard = () => {
           </div>
         ))}
       </div>
-      <button onClick={()=>setpageNumber(pageNumber+1)} >Next</button>
+      {<button onClick={()=>setpageNumber(pageNumber+1)}> Next </button>}
       <div>
         <Pagination
           postPerPage={postsPerPage}
