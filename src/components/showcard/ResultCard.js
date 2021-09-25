@@ -9,7 +9,7 @@ import classes from "./ResultCard.module.css";
 export const ResultCard = () => {
   const history = useHistory();
   const location = useLocation()
-  const { data,isLoading,error,pageNumber, setpageNumber } = useContext(ApiContext);
+  const { data,isLoading,error} = useContext(ApiContext);
   const [currentPage, setCurrentPage] = useState(location.state >1 ? location.state : 1);
   const [postsPerPage] = useState(8);
 
@@ -38,7 +38,6 @@ export const ResultCard = () => {
           </div>
         ))}
       </div>
-      {<button onClick={()=>setpageNumber(pageNumber+1)}> Next </button>}
       <div>
         <Pagination
           postPerPage={postsPerPage}
