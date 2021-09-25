@@ -8,4 +8,9 @@ const searhShow = (show) =>{
     return http.get(`search/shows?q=:${show}`)
 }
 
-export default {searhShow, getFirstData}
+const TvMazeAPIService = {
+    searhShow, 
+    getFirstData
+}
+
+export default TvMazeAPIService
