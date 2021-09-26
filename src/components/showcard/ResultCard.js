@@ -6,18 +6,17 @@ import RoutingPath from "../../routes/RoutingPath";
 import loader from '../../shared/images/loader.gif'
 import classes from "./ResultCard.module.css";
 
-export const ResultCard = (props) => {
+export const ResultCard = () => {
   const history = useHistory();
   const location = useLocation()
-  const { data,isLoading,error,pageNumber, setpageNumber } = useContext(ApiContext);
-  const [currentPage, setCurrentPage] = useState((props.startPage>1) ? props.startPage : 1);
+  const { data,isLoading,error} = useContext(ApiContext);
+  const [currentPage, setCurrentPage] = useState(location.state >1 ? location.state : 1);
   const [postsPerPage] = useState(8);
-
-  console.log(location.state);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPost = data.slice(indexOfFirstPost, indexOfLastPost);
+
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -29,7 +28,7 @@ export const ResultCard = (props) => {
       <div className={classes.result__card}>
         {currentPost.length > 0}
         {currentPost.map((shows) => (
-          <div key={shows.name} className={classes.post}>
+          <div key={shows.id} className={classes.post}>
             <h3>{shows.name}</h3>
             <img src={shows.image?.medium} alt="Movie Poster" />
             <h4>{shows.premiered ? shows.premiered.substring(0, 4) : "-"}</h4>
@@ -39,7 +38,6 @@ export const ResultCard = (props) => {
           </div>
         ))}
       </div>
-      <button onClick={()=>setpageNumber(pageNumber +1)} >Next</button>
       <div>
         <Pagination
           postPerPage={postsPerPage}

@@ -6,7 +6,7 @@ import classes from "./SignInView.module.css";
 
 export const SignInView = () => {
   const history = useHistory();
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState('Guest');
   const { setAuthenticatedUser } = useContext(UserContext);
 
   const login = () => {

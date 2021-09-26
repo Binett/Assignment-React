@@ -28,7 +28,6 @@
   box-shadow: 0 1.4rem 1rem rgba(0, 0, 0, 0.6);
 }
 
-
 .infosection {
   color: var(--clr-secondary-ligth);
   color: var(--clr-secondary-ligth);
@@ -47,7 +46,6 @@
   font-size: 1.6em;
   box-shadow: 0 1.4rem 2rem rgba(0, 0, 0, 0.6);
 }
-
 
 @media screen and (max-width: 868px) {
   .card {

@@ -12,13 +12,14 @@
 
 .heading {
   color: var(--clr-secondary-ligth);
-  text-shadow: 2px 2px #000;
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.76);
+
 }
 
 .label {
   color: var(--clr-secondary-ligth);
-  text-shadow: 2px 2px #000;
-  font-size: 1.2em;
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.76);
+  font-size: 1.4em;
   font-weight: bolder;
 }
 

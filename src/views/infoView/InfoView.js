@@ -6,8 +6,8 @@ import classes from "./InfoView.module.css";
 export const InfoView = () => {
   const location = useLocation();
   const history = useHistory();
+  
   console.log(location.state);
-
   const displayStateData = () => {
     return location.state ? (
       <div className={classes.card}>
