@@ -28,7 +28,7 @@ export const ResultCard = () => {
       <div className={classes.result__card}>
         {currentPost.length > 0}
         {currentPost.map((shows) => (
-          <div key={shows.name} className={classes.post}>
+          <div key={shows.id} className={classes.post}>
             <h3>{shows.name}</h3>
             <img src={shows.image?.medium} alt="Movie Poster" />
             <h4>{shows.premiered ? shows.premiered.substring(0, 4) : "-"}</h4>
