@@ -11,20 +11,11 @@
   border-radius: 1%;
 }
 
-.result__card{
-  background-color: var(--clr-primary-dark);
-  display: grid;
-  grid-template-columns: repeat(1,1fr);
-  max-width: 1080px;
-  margin: 0 auto;
-  border-radius: 1%;
-}
 
 .post img{
   box-shadow: 0 2em 2em rgba(0, 0, 0, 0.7);
   border-radius: 5px;
 }
-
 
 .post button{
   background: var(--clr-primary);
@@ -36,18 +27,3 @@
   box-shadow: 0 1.4em 2em rgba(0, 0, 0, 0.7);
 }
 
-
-
-@media only screen and (min-width: 768px) {
-  .result__card{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-  }
-}
-
-@media only screen and (min-width: 1068px) {
-  .result__card{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-  }
-}
