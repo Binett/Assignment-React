@@ -5,36 +5,42 @@ export const ApiContext = createContext();
 
 export const ApiProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [search, setSearch] = useState()
   const [error, setError] = useState(false);
   const [searchData, setsearchData] = useState([])
-  const [search, setSearch] = useState('')
+  const [isLoading, setIsLoading] = useState(true);
+
 
   useEffect(() => {
     const fetchSearchData = async () => {
+
       try {
         setIsLoading(true);
-        const { data } = await TvMazeAPIService.searhShow(search);
-        console.log(data);
+        const {data} = await TvMazeAPIService.searhShow(search)
         setsearchData(data)
-        setIsLoading(false);
+        console.log(data);      
+        setIsLoading(false)
+
       } catch (error) {
         setIsLoading(false)
         setError(true);
       }
     };
     fetchSearchData();
-  }, [search,setSearch]);
+  }, [search]);
+
+
 
 
   useEffect(() => {
     const fetchData = async () => {
+
       try {
         setIsLoading(true);
         const { data } = await TvMazeAPIService.getFirstData();
-        console.log(data);
         setData(data)
         setIsLoading(false);
+
       } catch (error) {
         setIsLoading(false)
         setError(true);
@@ -43,8 +49,10 @@ export const ApiProvider = ({ children }) => {
     fetchData();
   }, []);
 
+
+
   return (
-    <ApiContext.Provider value={{ data, isLoading, error, searchData,setSearch,search}}>
+    <ApiContext.Provider value={{ data, isLoading, error, searchData,setSearch}}>
       {children}
     </ApiContext.Provider>
   );

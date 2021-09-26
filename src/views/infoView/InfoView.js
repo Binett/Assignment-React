@@ -26,7 +26,9 @@ export const InfoView = () => {
           <h4>Type: {location.state.shows.type}</h4>
           <h4>Status: {location.state.shows.status}</h4>
           <h2>{location.state.shows.summary?.replace(/<[^&>]*>/g, " ")}</h2>
-          <button onClick={() => history.push(RoutingPath.showsView, location.state.currentPage)}>Go Back</button>
+          {location.state.currentPage 
+          ? <button onClick={() => history.push(RoutingPath.showsView, location.state.currentPage)}>Go Back</button> 
+          : <button onClick={()=>history.push(RoutingPath.searchView)}>Go Back</button>}
         </div>
       </div>
     ) : (
