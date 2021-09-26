@@ -6,7 +6,6 @@ export const ResultCard = ({ shows,currentPage }) => {
   const history = useHistory();
   return (
     <div>
-  
         <div key={shows.id} className={classes.post}>
           <h3>{shows.name}</h3>
           <img src={shows.image?.medium} alt="Movie Poster" />
@@ -23,6 +22,5 @@ export const ResultCard = ({ shows,currentPage }) => {
           </button>
         </div>
       </div>
-    
   );
 };

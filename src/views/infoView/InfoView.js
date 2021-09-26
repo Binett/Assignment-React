@@ -25,7 +25,7 @@ export const InfoView = () => {
           <h4>Rating: {location.state.shows.rating.average}</h4>
           <h4>Type: {location.state.shows.type}</h4>
           <h4>Status: {location.state.shows.status}</h4>
-          <h2>{location.state.shows.summary.replace(/<[^&>]*>/g, " ")}</h2>
+          <h2>{location.state.shows.summary?.replace(/<[^&>]*>/g, " ")}</h2>
           <button onClick={() => history.push(RoutingPath.showsView, location.state.currentPage)}>Go Back</button>
         </div>
       </div>
