@@ -25,6 +25,9 @@ export const NavigationDesktop = () => {
                 <li onClick={() => history.push(RoutingPath.showsView)}>
                   Shows
                 </li>
+                <li onClick={() => history.push(RoutingPath.searchView)}>
+                  Search
+                </li>
                 <li onClick={() => logout()}>Logout</li>
               </div>
             ) : (

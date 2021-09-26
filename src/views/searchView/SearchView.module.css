@@ -1,0 +1,27 @@
+.post{
+    background-color: var(--clr-primary-dark);
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    max-width: 1080px;
+    margin: 0 auto;
+    border-radius: 1%;
+    grid-gap:1em;
+}
+
+.post ul{
+    list-style: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .post{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+
+@media only screen and (min-width: 1068px) {
+    .post{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+}

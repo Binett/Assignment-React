@@ -9,8 +9,7 @@ export const HomeView = () => {
   const history = useHistory()
 
   const handleSubmit = ()=>{
-    const newTab = window.open("https://github.com/Binett", "_blank")
-    newTab.focus();
+      window.open("https://github.com/Binett")
   }
 
   const displayIfLoggedinOrNot = () =>{

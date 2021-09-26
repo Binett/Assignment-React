@@ -2,19 +2,23 @@ import React, { useContext } from "react";
 import { ApiContext } from "../../shared/provider/ApiContext";
 import { ResultCard } from "../../components/showcard/ResultCard";
 import loader from '../../shared/images/loader.gif'
+import classes from './SearchView.module.css'
 
 export const SearchView = () => {
   const { searchData, setSearch , isLoading, error } = useContext(ApiContext);
 
-  const onChange = (event) => {
-    event.preventDefault();
-    if(event.target.value.length >=1){
-      setSearch(event.target.value);
-    }else{
-      setSearch()
-    }
-  };
 
+  const onChange = (event) => {
+    setTimeout(() => {
+      event.preventDefault();
+      if(event.target.value.length >=1){
+        setSearch(event.target.value);
+      }else{
+        setSearch()
+      }      
+    }, 1500);
+  };
+  
   return (
     <div>
        {isLoading 
@@ -27,13 +31,15 @@ export const SearchView = () => {
         onChange={onChange}
       />
       {(searchData.length > 0) 
-      ? (<ul>
-          {searchData.map((shows, i) => (
-            <li key={i}>
-              <ResultCard shows={shows.show} />
-            </li>
-          ))}
-        </ul>
+      ? (
+        <div className={classes.post}>
+            {searchData.map((shows, i) => (
+              <div key={i}>
+                <ResultCard shows={shows.show} />
+              </div>
+            ))}
+          </div>
+      
       ) 
       : (<h2>No shows found</h2>)}
     </div>
